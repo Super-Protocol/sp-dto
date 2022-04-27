@@ -1,0 +1,15 @@
+syntax = "proto3";
+
+message Encryption {
+    string algo = 1;
+    optional bytes key = 2;
+    optional string cipher = 3;
+    optional bytes ciphertext = 4;
+}
+
+message TRI {
+    string solutionHashes = 1;
+    bytes mrenclave = 2;
+    string args = 3;
+    Encryption encryption = 4;
+}
