@@ -10,7 +10,7 @@ message Encryption {
 }
 
 message TRI {
-    string solutionHashes = 1;
+    repeated string solutionHashes = 1;
     bytes mrenclave = 2;
     string args = 3;
     Encryption encryption = 4;
