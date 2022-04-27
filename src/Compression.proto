@@ -4,6 +4,7 @@ message Compression {
     enum TYPE {
         GZIP = 0;
     }
+
     bytes data = 1;
     TYPE type = 2;
 }

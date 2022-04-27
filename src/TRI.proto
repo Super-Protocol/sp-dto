@@ -5,6 +5,8 @@ message Encryption {
     optional bytes key = 2;
     optional string cipher = 3;
     optional bytes ciphertext = 4;
+    optional bytes iv = 6;
+    optional bytes mac = 7;
 }
 
 message TRI {
