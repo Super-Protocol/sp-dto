@@ -11,7 +11,7 @@ message Encryption {
 
 message Hash {
     string type = 1;
-    bytes hash = 2;
+    string hash = 2;
 }
 
 message TRI {
