@@ -10,7 +10,7 @@ message Encryption {
 }
 
 message Hash {
-    string type = 1;
+    string algo = 1;
     bytes hash = 2;
 }
 
