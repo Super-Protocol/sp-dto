@@ -9,8 +9,13 @@ message Encryption {
     optional bytes mac = 7;
 }
 
+message Hash {
+    string type = 1;
+    bytes hash = 2;
+}
+
 message TRI {
-    repeated string solutionHashes = 1;
+    repeated Hash solutionHashes = 1;
     bytes mrenclave = 2;
     string args = 3;
     Encryption encryption = 4;

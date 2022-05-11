@@ -5,6 +5,6 @@ message Compression {
         GZIP = 0;
     }
 
-    TYPE type = 2;
-    bytes data = 1;
+    TYPE type = 1;
+    bytes data = 2;
 }
