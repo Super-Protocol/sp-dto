@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+message TeeDeviceInfo {
+    Trusted trusted = 1;
+    Untrusted untrasted = 2;
+}
+
+message Trusted {
+    number cpuScore = 1;
+    number memBandwidth = 2;
+}
+
+message Untrusted {
+    repeated Cpus cpus = 1;
+    number memKb = 2;
+}
+
+message Cpus {
+    string vendorId = 1;
+    number cpuFamily = 2;
+    number model = 3;
+    string modelName = 4;
+    number physicalCores = 5;
+    number logicalCores = 6;
+    number baseFreq = 7;
+    number maxFreq = 8;
+}
