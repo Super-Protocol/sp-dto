@@ -1,0 +1,36 @@
+syntax = "proto3";
+
+message TeeProperties {
+    TeeDeviceInfo teeDeviceInfo = 1;
+    TeeRunCpuBenchmark teeRunCpuBenchmark = 2;
+    TeeRunMemoryBenchmark teeRunMemoryBenchmark = 3;
+}
+
+message TeeDeviceInfo {
+    repeated Cpus cpus = 1;
+    int32 memSize = 2;
+    int32 totalPhysicalCores = 3;
+    int32 totalLogicalCores = 4;
+}
+
+message Cpus {
+    string vendorId = 1;
+    int32 cpuFamily = 2;
+    int32 model = 3;
+    string modelName = 4;
+    int32 physicalCores = 5;
+    int32 logicalCores = 6;
+    int32 baseFreq = 7;
+    int32 maxFreq = 8;
+}
+
+message TeeRunCpuBenchmark = {
+    int32 cpuScore = 1;
+    string cpuBenchmark = 2;
+    int32 cpuCoresCount = 3;
+};
+
+message TeeRunMemoryBenchmark = {
+    int32 memBandwidth = 1;
+    int32 memСonfirmedSize = 2;
+};
