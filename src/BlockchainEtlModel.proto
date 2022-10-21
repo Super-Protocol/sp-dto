@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+message BlockchainEtlModel {
+    uint32 type = 1;
+    optional uint32 subtype = 2;
+    optional Metadata metadata = 3;
+}
+
+message Metadata {
+    uint32 contentType = 1;
+    optional bytes resource = 2;
+}
