@@ -2,7 +2,8 @@ syntax = "proto3";
 
 message Compression {
     enum TYPE {
-        GZIP = 0;
+        Uncompressed = 0;
+        GZIP = 1;
     }
 
     TYPE type = 1;
