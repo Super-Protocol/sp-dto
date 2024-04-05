@@ -20,4 +20,5 @@ message TRI {
     bytes mrenclave = 2;
     string args = 3;
     Encryption encryption = 4;
+    bytes mrsigner = 5;
 }
