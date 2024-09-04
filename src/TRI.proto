@@ -21,4 +21,5 @@ message TRI {
     string args = 3;
     Encryption encryption = 4;
     bytes mrsigner = 5;
+    repeated Hash imageHashes = 6;
 }
