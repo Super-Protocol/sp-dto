@@ -34,10 +34,14 @@ message GpuInfo {
     int64 memory_size = 3;
 }
 
+message ScoreInfo {
+    int32 score = 1;
+    int32 size = 2;
+}
 message TeeBenchmark {
-    int32 cpu_score = 1;
-    int32 ram_score = 2;
-    int32 disk_score = 3;
-    int32 network_score = 4;
-    int32 gpu_score = 5;
+    ScoreInfo cpu_score = 1;
+    ScoreInfo ram_score = 2;
+    ScoreInfo disk_score = 3;
+    ScoreInfo network_score = 4;
+    ScoreInfo gpu_score = 5;
 };
