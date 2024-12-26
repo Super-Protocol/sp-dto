@@ -1,36 +1,35 @@
 syntax = "proto3";
 
-message TeeProperties {
-    TeeDeviceInfo tee_device_info = 1;
-    TeeRunCpuBenchmark tee_run_cpu_benchmark = 2;
-    TeeRunMemoryBenchmark tee_run_memory_benchmark = 3;
-}
-
 message TeeDeviceInfo {
-    repeated Cpus cpus = 1;
-    int32 mem_size = 2;
-    int32 total_physical_cores = 3;
-    int32 total_logical_cores = 4;
+    CpuInfo cpu = 1;
+    MemoryInfo memory = 2;
+    DiskInfo disk = 3;
+    GpuInfo gpu = 4;
 }
 
-message Cpus {
+message CpuInfo {
     string vendor_id = 1;
     int32 cpu_family = 2;
     int32 model = 3;
     string model_name = 4;
-    int32 physical_cores = 5;
-    int32 logical_cores = 6;
+    int32 total_physical_cores = 5;
+    int32 total_logical_cores = 6;
     int32 base_freq = 7;
     int32 max_freq = 8;
 }
 
-message TeeRunCpuBenchmark {
-    int32 cpu_score = 1;
-    string cpu_benchmark = 2;
-    int32 cpu_cores_count = 3;
-};
+message MemoryInfo {
+    string type = 1;
+    int64 size = 2;
+}
 
-message TeeRunMemoryBenchmark {
-    int32 mem_bandwidth = 1;
-    int32 mem_confirmed_size = 2;
-};
+message DiskInfo {
+    string type = 1;
+    int64 size = 2;
+}
+
+message GpuInfo {
+    string type = 1;
+    int32 count = 2;
+    int64 memory_size = 3;
+}
