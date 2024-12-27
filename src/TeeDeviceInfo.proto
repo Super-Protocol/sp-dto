@@ -1,0 +1,35 @@
+syntax = "proto3";
+
+message TeeDeviceInfo {
+    CpuInfo cpu = 1;
+    MemoryInfo memory = 2;
+    DiskInfo disk = 3;
+    GpuInfo gpu = 4;
+}
+
+message CpuInfo {
+    string vendor_id = 1;
+    int32 cpu_family = 2;
+    int32 model = 3;
+    string model_name = 4;
+    int32 total_physical_cores = 5;
+    int32 total_logical_cores = 6;
+    int32 base_freq = 7;
+    int32 max_freq = 8;
+}
+
+message MemoryInfo {
+    string type = 1;
+    int64 size = 2;
+}
+
+message DiskInfo {
+    string type = 1;
+    int64 size = 2;
+}
+
+message GpuInfo {
+    string type = 1;
+    int32 count = 2;
+    int64 memory_size = 3;
+}
