@@ -1,0 +1,6 @@
+syntax = "proto3";
+
+message Hash {
+    string algo = 1;
+    bytes hash = 2;
+}
