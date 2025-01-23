@@ -1,5 +1,7 @@
 syntax = "proto3";
 
+import "Hash.proto";
+
 message OrderReportProto {
     repeated bytes certificates = 1;
     WorkloadInfo workloadInfo = 2;
@@ -14,10 +16,6 @@ message RuntimeInfo {
     string type = 1;
     int64 size = 2;
     Hash hash = 3;
-    Hash signatureKeyHash = 4;
-}
-
-message Hash {
-    string algo = 1;
-    bytes hash = 2;
+    optional Hash signatureKeyHash = 4;
+    optional Hash argsHash = 5;
 }

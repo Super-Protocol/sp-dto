@@ -1,5 +1,7 @@
 syntax = "proto3";
 
+import "Hash.proto";
+
 message Encryption {
     string algo = 1;
     optional bytes key = 2;
@@ -8,11 +10,6 @@ message Encryption {
     optional bytes iv = 6;
     optional bytes mac = 7;
     string encoding = 8;
-}
-
-message Hash {
-    string algo = 1;
-    bytes hash = 2;
 }
 
 message TRI {
