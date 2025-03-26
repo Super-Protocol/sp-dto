@@ -40,3 +40,7 @@ message NvtrustGPUInfo {
   string vbios = 3;
   bool dbgStat = 4;
 }
+
+message NvtrustGPUList {
+  repeated NvtrustGPUInfo gpus = 1;
+}
