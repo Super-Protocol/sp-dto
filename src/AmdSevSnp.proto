@@ -26,6 +26,6 @@ message SNPReport {
 }
 
 message SNPReportWithChain {
-  SNPReport report = 1;
+  SNPReport snpReport = 1;
   repeated SnpCert certs = 2;
 }
