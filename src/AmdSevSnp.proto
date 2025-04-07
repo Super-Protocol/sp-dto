@@ -18,7 +18,7 @@ message SnpCert {
 }
 
 message SNPReport {
-  bytes report = 1;
+  bytes rawReport = 1;
   uint32 cpuSig = 2;
   uint32 cores = 3;
   bytes cmdLineHash = 4;
