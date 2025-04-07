@@ -6,7 +6,7 @@ enum SevSNPCertType {
   VCEK = 2;
 }
 
-enum CertificateFormat {
+enum SevSnpCertificateFormat {
   PEM = 0;
   DER = 1;
 }
@@ -14,7 +14,7 @@ enum CertificateFormat {
 message SnpCert {
   SevSNPCertType type = 1;
   bytes cert = 2;
-  CertificateFormat format = 3;
+  SevSnpCertificateFormat format = 3;
 }
 
 message SNPReport {
