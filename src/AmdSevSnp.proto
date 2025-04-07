@@ -1,0 +1,31 @@
+syntax = "proto3";
+
+enum SevSNPCertType {
+  ARK = 0;
+  ASK = 1;
+  VCEK = 2;
+}
+
+enum CertificateFormat {
+  PEM = 0;
+  DER = 1;
+}
+
+message SnpCert {
+  SevSNPCertType type = 1;
+  bytes cert = 2;
+  CertificateFormat format = 3;
+}
+
+message SNPReport {
+  bytes report = 1;
+  uint32 cpuSig = 2;
+  uint32 cores = 3;
+  bytes cmdLineHash = 4;
+  string build = 5;
+}
+
+message SNPReportWithChain {
+  SNPReport report = 1;
+  repeated SnpCert certs = 2;
+}
