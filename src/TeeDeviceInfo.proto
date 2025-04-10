@@ -33,14 +33,3 @@ message GpuInfo {
     int32 count = 2;
     int64 memory_size = 3;
 }
-
-message NvtrustGPUInfo {
-  string model = 1;
-  string driverVersion = 2;
-  string vbios = 3;
-  bool dbgStat = 4;
-}
-
-message NvtrustGPUList {
-  repeated NvtrustGPUInfo gpus = 1;
-}
