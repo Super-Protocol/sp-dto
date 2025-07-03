@@ -10,6 +10,7 @@ message OrderReportProto {
 message WorkloadInfo {
     repeated RuntimeInfo runtimeInfo = 1;
     int64 created = 2;
+    OrderCapacity orderCapacity = 3;
 }
 
 message RuntimeInfo {
@@ -18,4 +19,15 @@ message RuntimeInfo {
     Hash hash = 3;
     optional Hash signatureKeyHash = 4;
     optional Hash argsHash = 5;
+}
+
+message OrderCapacity {
+    int64 cpuCores = 1;
+    int64 ram = 2;
+    int64 diskUsage = 3;
+    int64 gpuCores = 4;
+    int64 vram = 5;
+    int64 bandwidth = 6;
+    int64 externalPort = 7;
+    int64 traffic = 8;
 }
