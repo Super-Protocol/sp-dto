@@ -25,7 +25,7 @@ message OrderCapacity {
     int64 cpuCores = 1;
     int64 ram = 2;
     int64 diskUsage = 3;
-    int64 gpuCores = 4;
+    double gpuCores = 4;
     int64 vram = 5;
     int64 bandwidth = 6;
     int64 externalPort = 7;
