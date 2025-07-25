@@ -10,7 +10,7 @@ message OrderReportProto {
 message WorkloadInfo {
     repeated RuntimeInfo runtimeInfo = 1;
     int64 created = 2;
-    OrderCapacity orderCapacity = 3;
+    optional OrderCapacity orderCapacity = 3;
 }
 
 message RuntimeInfo {
@@ -22,7 +22,7 @@ message RuntimeInfo {
 }
 
 message OrderCapacity {
-    int64 cpuCores = 1;
+    double cpuCores = 1;
     int64 ram = 2;
     int64 diskUsage = 3;
     double gpuCores = 4;
