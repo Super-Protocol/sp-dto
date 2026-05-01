@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+message IntelTDXEventLog {
+  string type = 1;
+  string digest = 2;
+}
+
+message IntelTDXEvidence {
+  bytes quote = 1;
+  repeated IntelTDXEventLog eventLog = 2;
+}

@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+import "AmdSevSnp.proto";
+import "IntelTDX.proto";
+
+message TeeEvidence {
+  oneof evidence {
+    AmdSevSnpEvidence amdSevSnp = 1;
+    IntelTDXEvidence intelTdx = 2;
+  }
+}
