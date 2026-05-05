@@ -26,7 +26,7 @@ message SNPReport {
   string build = 5;
 }
 
-message AmdSevSnpEvidence {
+message AmdSevSnpQemuEvidence {
   SNPReport snpReport = 1;
   repeated SnpCert certs = 2;
 }

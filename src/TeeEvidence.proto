@@ -5,7 +5,8 @@ import "IntelTDX.proto";
 
 message TeeEvidence {
   oneof evidence {
-    AmdSevSnpEvidence amdSevSnp = 1;
-    IntelTDXEvidence intelTdx = 2;
+    AmdSevSnpQemuEvidence amdSevSnpQemu = 1;
+    IntelTDXQemuEvidence intelTdxQemu = 2;
+    IntelTDXGCPEvidence intelTdxGcp = 3;
   }
 }

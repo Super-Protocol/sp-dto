@@ -5,7 +5,12 @@ message IntelTDXEventLog {
   string digest = 2;
 }
 
-message IntelTDXEvidence {
+message IntelTDXQemuEvidence {
+  bytes quote = 1;
+  repeated IntelTDXEventLog eventLog = 2;
+}
+
+message IntelTDXGCPEvidence {
   bytes quote = 1;
   repeated IntelTDXEventLog eventLog = 2;
 }
