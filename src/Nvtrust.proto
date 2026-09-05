@@ -10,3 +10,24 @@ message NvtrustGPUInfo {
 message NvtrustGPUList {
   repeated NvtrustGPUInfo gpus = 1;
 }
+
+enum NvidiaSwitchAttestation {
+  NVIDIA_SWITCH_ATTESTATION_NOT_APPLICABLE = 0;
+  NVIDIA_SWITCH_ATTESTATION_VERIFIED = 1;
+}
+
+message NvidiaSwitchInfo {
+  string model = 1;
+  string biosVersion = 2;
+  bool secureBoot = 3;
+  bool debugEnabled = 4;
+}
+
+message NvidiaFabricInfo {
+  uint32 gpuCount = 1;
+  uint32 connectedPairCount = 2;
+  uint32 totalPairCount = 3;
+  NvidiaSwitchAttestation switchAttestation = 4;
+  uint32 nvswitchCount = 5;
+  repeated NvidiaSwitchInfo switches = 6;
+}
