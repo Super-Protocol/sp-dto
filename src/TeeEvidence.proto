@@ -8,6 +8,7 @@ enum TeeEvidenceType {
   TEE_EVIDENCE_TYPE_AMD_SEV_SNP_QEMU = 1;
   TEE_EVIDENCE_TYPE_INTEL_TDX_QEMU = 2;
   TEE_EVIDENCE_TYPE_INTEL_TDX_GCP = 3;
+  TEE_EVIDENCE_TYPE_INTEL_TDX_AZURE = 4;
 }
 
 message TeeEvidence {
@@ -15,5 +16,6 @@ message TeeEvidence {
     AmdSevSnpQemuEvidence amdSevSnpQemu = 1;
     IntelTDXQemuEvidence intelTdxQemu = 2;
     IntelTDXGCPEvidence intelTdxGcp = 3;
+    IntelTDXAzureEvidence intelTdxAzure = 4;
   }
 }
