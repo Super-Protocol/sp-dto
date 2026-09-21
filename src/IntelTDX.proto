@@ -27,13 +27,10 @@ message IntelTDXAzureEvidence {
   bytes tpmAttest = 3;
   // TPMT_SIGNATURE of tpmAttest (RSASSA, SHA-256).
   bytes tpmSignature = 4;
-  // SHA-256 bank value of PCR4 (boot applications: GRUB, kernel).
-  bytes pcr4 = 5;
-  // SHA-256 bank value of PCR9 (kernel command line).
-  bytes pcr9 = 6;
   // TCG2 crypto-agile event log: Spec ID header followed by PCR4 and PCR9 events only.
-  bytes eventLog = 7;
+  // PCR values are recomputed by replaying it and checked against pcrDigest in tpmAttest.
+  bytes eventLog = 5;
   // DER certificates: AK certificate (vTPM NV 0x01C101D0) first, then intermediates fetched via AIA.
   // The Microsoft root is pinned by the verifier and not included.
-  repeated bytes akCertChain = 8;
+  repeated bytes akCertChain = 6;
 }
