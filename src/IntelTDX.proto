@@ -14,3 +14,26 @@ message IntelTDXGCPEvidence {
   bytes quote = 1;
   repeated IntelTDXEventLog eventLog = 2;
 }
+
+message IntelTDXAzureEvidence {
+  // Raw HCL report read from vTPM NV index 0x01400001:
+  // "HCLA" header + TDREPORT + runtime data JSON (HCLAkPub, vm-configuration, user-data).
+  // user-data holds the caller's userData (key or its hash), zero-padded to 64 bytes.
+  bytes hclReport = 1;
+  // TD quote for the TDREPORT embedded in hclReport (Azure IMDS /acc/tdquote).
+  bytes quote = 2;
+  // TPMS_ATTEST from TPM2_Quote signed by the vTPM AK (0x81000003) over SHA-256 PCR 4 and 9;
+  // qualifyingData = SHA-256(userData padded to 64 bytes).
+  bytes tpmAttest = 3;
+  // TPMT_SIGNATURE of tpmAttest (RSASSA, SHA-256).
+  bytes tpmSignature = 4;
+  // SHA-256 bank value of PCR4 (boot applications: GRUB, kernel).
+  bytes pcr4 = 5;
+  // SHA-256 bank value of PCR9 (kernel command line).
+  bytes pcr9 = 6;
+  // TCG2 crypto-agile event log: Spec ID header followed by PCR4 and PCR9 events only.
+  bytes eventLog = 7;
+  // DER certificates: AK certificate (vTPM NV 0x01C101D0) first, then intermediates fetched via AIA.
+  // The Microsoft root is pinned by the verifier and not included.
+  repeated bytes akCertChain = 8;
+}
