@@ -7,8 +7,18 @@ message NvtrustGPUInfo {
   bool dbgStat = 4;
 }
 
+// How the GPU evidence in this certificate was verified.
+// UNSPECIFIED is the value decoded from certificates issued before the field
+// existed. REMOTE is NRAS. LOCAL is verification on the PKI authority.
+enum NvidiaAttestationMode {
+  NVIDIA_ATTESTATION_MODE_UNSPECIFIED = 0;
+  NVIDIA_ATTESTATION_MODE_REMOTE = 1;
+  NVIDIA_ATTESTATION_MODE_LOCAL = 2;
+}
+
 message NvtrustGPUList {
   repeated NvtrustGPUInfo gpus = 1;
+  NvidiaAttestationMode attestationMode = 2;
 }
 
 enum NvidiaGpuInterconnectStatus {
